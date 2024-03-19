@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Result</title>
+</head>
+<body>
+    <h1>Image Results</h1>
+    {% for i in metrics %}
+    <div>
+        <img width="500" height="500" src="{{ i.url }}" alt="Image">
+        <p>Clear: {% if i.is_clear %} Yes {% else %} No {% endif %}</p>
+        <ul>
+            <li>Laplacian Variance: {{ i.laplacian_variance }}</li>
+            <li>Noise: {{ i.noise }}</li>
+            <li>Contrast: {{ i.contrast }}</li>
+            <li>Saturation: {{ i.saturation }}</li>
+            <li>Brightness: {{ i.brightness }}</li>
+        </ul>
+    </div>
+    {% endfor %}
+</body>
+</html>
